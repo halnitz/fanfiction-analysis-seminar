@@ -1,0 +1,687 @@
+Chose Input Dir Directory: C:\Users\User\Desktop\sample-data\newTwilight\noSpecialChars
+Chose Metadata File File: C:\Users\User\Desktop\sample-data\meta2.csv
+Chose Stopword File File: C:\Users\User\Desktop\names.txt
+
+Importing and Training
+This could take minutes or days depending on settings and corpus size.
+
+** Importing From C:\Users\User\Desktop\sample-data\newTwilight\noSpecialChars **
+
+Mallet command: 
+    mallet import-dir  \
+	--extra-stopwords C:\Users\User\Desktop\names.txt  \
+	--remove-stopwords  \
+	--token-regex [\p{L}\p{N}_]+  \
+	--input C:\Users\User\Desktop\sample-data\newTwilight\noSpecialChars  \
+	--output C:\Users\User\Desktop\output_mallet\topic-input.mallet  \
+	--keep-sequence 
+
+
+--- Start of Mallet Output ---
+
+Labels = 
+   C:\Users\User\Desktop\sample-data\newTwilight\noSpecialChars
+
+--- End of Mallet Output ---
+
+
+Import successful.
+
+** Training **
+
+Mallet command: 
+    mallet train-topics  \
+	--num-iterations 2000  \
+	--num-top-words 21  \
+	--optimize-interval 10  \
+	--num-threads 10  \
+	--show-topics-interval 100  \
+	--doc-topics-threshold 0.0  \
+	--input C:\Users\User\Desktop\output_mallet\topic-input.mallet  \
+	--num-topics 10  \
+	--output-state C:\Users\User\Desktop\output_mallet\output-state.gz  \
+	--output-topic-keys C:\Users\User\Desktop\output_mallet\topic-keys.txt  \
+	--output-doc-topics C:\Users\User\Desktop\output_mallet\doc-topics.txt  \
+	--word-topic-counts-file C:\Users\User\Desktop\output_mallet\words-topics-counts.txt 
+
+
+--- Start of Mallet Output ---
+
+Data loaded.
+Coded LDA: 10 topics, 4 topic bits, 1111 topic mask
+max tokens: 95301
+total tokens: 7093391
+<10> LL/token: -10.54495
+<20> LL/token: -10.0557
+<30> LL/token: -9.74912
+<40> LL/token: -9.62633
+<50> LL/token: -9.56304
+<60> LL/token: -9.51965
+<70> LL/token: -9.49012
+<80> LL/token: -9.46785
+<90> LL/token: -9.44801
+
+0	5	jake back time pack wolf wanted knew jacobs thought love dad make mom face felt told feel good things eyes 
+1	5	time father mother years girl day family home long people house life knew sister ashley things year man friends made 
+2	5	eyes looked back asked head face turned hand voice knew beau thought door felt smiled louisa made shook sighed long 
+3	5	good fuck fucking man shit time work god back mouth make people phone rose pretty hair hand yeah woman thing 
+4	5	eyes school class face back voice table car forks truck time good day thought lot seat people made smile dad 
+5	5	back looked asked eyes time nodded head smiled hand started house room felt turned made door knew told walked wanted 
+6	5	aro caius marcus back demetri felix asked looked room vampire mate alec hand mia aros head valerie eyes ramona vampires 
+7	5	eyes back hand face felt lips hands head body voice fingers mouth feel skin chest hair arms neck heart smile 
+8	5	back eyes head asks feel hand face time smile takes smiles room makes make turns nods door feels love hands 
+9	5	time human vampire knew life thought made bellas mind family wanted felt make blood moment vampires things thoughts words needed 
+
+<100> LL/token: -9.4335
+<110> LL/token: -9.42023
+<120> LL/token: -9.41157
+<130> LL/token: -9.40383
+<140> LL/token: -9.39567
+<150> LL/token: -9.38965
+<160> LL/token: -9.38595
+<170> LL/token: -9.3806
+<180> LL/token: -9.37725
+<190> LL/token: -9.37401
+
+0	5	jake back pack time wolf knew jacobs wanted thought mom make dad things love told good imprint wolves face yeah 
+1	5	time father years mother girl man day family home long sister life house ashley people found woman year brother friends 
+2	5	eyes back looked head asked face turned hand voice door thought beau knew hands shook smiled long began louisa sighed 
+3	5	good time back make shit work fuck fucking phone man people yeah god rose thing things mouth pretty put call 
+4	5	school eyes class back face car voice time forks table truck day good thought lot seat people smile made friends 
+5	5	back asked looked eyes head nodded time hand smiled house felt started room turned knew made door told walked wanted 
+6	5	aro caius marcus back demetri felix vampire room looked asked alec mia aros mate valerie ramona vampires thought head hand 
+7	5	eyes back hand face lips hands body felt head fingers mouth feel voice skin chest hair arms words neck heart 
+8	5	back eyes head asks hand face feel smile takes smiles makes time room turns nods love door feels make hands 
+9	5	time human vampire knew thought life mind made felt family wanted make bellas things blood moment vampires thoughts back needed 
+
+<200> LL/token: -9.37144
+[beta: 0.03539] 
+<210> LL/token: -9.35985
+[beta: 0.04228] 
+<220> LL/token: -9.36038
+[beta: 0.04501] 
+<230> LL/token: -9.35479
+[beta: 0.04656] 
+<240> LL/token: -9.34712
+[beta: 0.0475] 
+<250> LL/token: -9.34038
+[beta: 0.04827] 
+<260> LL/token: -9.3322
+[beta: 0.04892] 
+<270> LL/token: -9.32687
+[beta: 0.04937] 
+<280> LL/token: -9.32276
+[beta: 0.04973] 
+<290> LL/token: -9.31751
+
+0	0.53885	jake back wolf pack time jacobs knew thought mom wanted imprint dad things leahs wolves make alex mae long kim 
+1	1.16606	father mother time years man ashley girl day sister long family home house woman good young found town eda daughter 
+2	1.12192	eyes back looked head face asked hand turned voice door hands beau thought shook nodded began smiled hair pulled arm 
+3	1.19104	good time back make work yeah fuck shit phone fucking people things man rose god thing call pretty put mouth 
+4	1.46056	school eyes class face car back time forks voice table truck day good thought friends lot people seat smile made 
+5	2.94679	back asked looked eyes head time hand nodded house smiled room felt started turned knew door made face told walked 
+6	0.1456	aro caius marcus demetri felix back mia valerie aros ramona alec vampire room willow mate guard looked vampires asked brother 
+7	2.5366	eyes back hand lips face body hands head felt feel mouth fingers skin voice hair chest arms words neck heart 
+8	0.49436	back eyes head asks hand face feel takes smile time makes smiles room nods turns door feels love make bambi 
+9	3.45841	time human knew vampire thought life mind made felt family make wanted bellas back things moment blood eyes thoughts vampires 
+
+[beta: 0.05007] 
+<300> LL/token: -9.31269
+[beta: 0.05034] 
+<310> LL/token: -9.30838
+[beta: 0.05073] 
+<320> LL/token: -9.30447
+[beta: 0.05086] 
+<330> LL/token: -9.30107
+[beta: 0.05119] 
+<340> LL/token: -9.29753
+[beta: 0.05139] 
+<350> LL/token: -9.29552
+[beta: 0.05157] 
+<360> LL/token: -9.29249
+[beta: 0.05164] 
+<370> LL/token: -9.29049
+[beta: 0.05161] 
+<380> LL/token: -9.28822
+[beta: 0.05183] 
+<390> LL/token: -9.28584
+
+0	0.18524	jake wolf pack back time jacobs knew mom imprint thought wanted leahs alex mae dad kim wolves long sams things 
+1	0.31388	ashley mother father time man years girl family day sister amber long eda home woman house young good room people 
+2	0.47808	eyes back head looked hand face asked turned door hands voice nodded room arm shook side pulled held sighed hair 
+3	0.4245	time good back yeah make work phone people shit fuck fucking things thing man god rose call pretty put made 
+4	0.47565	school eyes class face back car voice forks truck table time beau day good looked made thought people jess lot 
+5	1.17649	back asked looked eyes time head hand nodded felt smiled house room started knew turned face told door made wanted 
+6	0.07473	aro caius marcus demetri felix mia valerie aros ramona alec back vampire room willow mate guard vampires looked asked coven 
+7	0.9094	eyes back lips body hand face hands felt feel mouth head fingers skin voice hair chest arms love time words 
+8	0.19851	back eyes head asks hand face feel smile takes time smiles makes nods door room turns feels make hands bambi 
+9	1.50088	time human knew thought vampire life made mind family felt wanted make back bellas things moment eyes blood feel thoughts 
+
+[beta: 0.05165] 
+<400> LL/token: -9.28399
+[beta: 0.05179] 
+<410> LL/token: -9.28177
+[beta: 0.05186] 
+<420> LL/token: -9.27724
+[beta: 0.05193] 
+<430> LL/token: -9.27754
+[beta: 0.05207] 
+<440> LL/token: -9.27432
+[beta: 0.05209] 
+<450> LL/token: -9.27349
+[beta: 0.05216] 
+<460> LL/token: -9.27128
+[beta: 0.05222] 
+<470> LL/token: -9.26916
+[beta: 0.05226] 
+<480> LL/token: -9.26642
+[beta: 0.05223] 
+<490> LL/token: -9.26449
+
+0	0.13098	jake wolf pack back time knew jacobs thought imprint mom wanted leahs alex mae kim sams dad things long wolves 
+1	0.19934	ashley mother time father man years long girl amber family day eda sister woman home good finally young house love 
+2	0.39464	back eyes head hand face looked asked turned hands door voice room smile hair pulled nodded arms arm made shook 
+3	0.31979	time good yeah back make people phone work shit fuck thing things fucking pretty god lot man made day dad 
+4	0.25576	eyes school class face back voice car forks beau looked truck time table day good thought jess asked people made 
+5	0.65042	back asked looked eyes time head hand smiled nodded room felt house knew started turned face made told door love 
+6	0.06132	aro caius marcus demetri felix valerie mia aros ramona vampire alec back willow room mate guard vampires looked coven basileus 
+7	0.46614	eyes back lips body hand feel hands face felt mouth head fingers voice skin hair love chest time neck words 
+8	0.14261	back eyes head asks hand face smile takes feel smiles makes nods time room door turns feels hands bambi make 
+9	0.91206	time human knew thought vampire life mind made felt family wanted make back eyes bellas moment things feel blood thoughts 
+
+[beta: 0.05218] 
+<500> LL/token: -9.26193
+[beta: 0.05207] 
+<510> LL/token: -9.26188
+[beta: 0.05212] 
+<520> LL/token: -9.25965
+[beta: 0.05225] 
+<530> LL/token: -9.25896
+[beta: 0.05225] 
+<540> LL/token: -9.25698
+[beta: 0.05231] 
+<550> LL/token: -9.25555
+[beta: 0.05223] 
+<560> LL/token: -9.25562
+[beta: 0.05232] 
+<570> LL/token: -9.25585
+[beta: 0.05226] 
+<580> LL/token: -9.25318
+[beta: 0.0522] 
+<590> LL/token: -9.25104
+
+0	0.11378	jake wolf pack back time jacobs knew thought imprint mom wanted leahs mae alex kim sams long wolves words push 
+1	0.15927	ashley mother time man father years girl amber eda long family woman sister day home world good young left night 
+2	0.37661	back eyes head hand face looked hands turned door asked voice smile room hair side pulled fingers arms nodded lips 
+3	0.30367	time good back yeah make people phone work school shit day girl dad made things lot thing fuck pretty fucking 
+4	0.2034	eyes school class face back voice looked beau car truck asked table forks time jess day thought good made edythe 
+5	0.51494	back asked looked eyes time head hand smiled nodded felt knew house room started face told turned made door wanted 
+6	0.05478	aro caius marcus demetri felix valerie aros mia ramona vampire alec back room willow mate guard vampires looked coven basileus 
+7	0.33053	eyes back lips body hand feel hands felt face mouth love fingers hair skin voice head chest time arms neck 
+8	0.13288	back eyes head asks face hand smile takes feel smiles time makes room door nods hands turns feels make bambi 
+9	0.75392	time human knew thought vampire life made felt mind wanted family make eyes back bellas feel moment blood things long 
+
+[beta: 0.05226] 
+<600> LL/token: -9.24899
+[beta: 0.05231] 
+<610> LL/token: -9.24844
+[beta: 0.05228] 
+<620> LL/token: -9.24766
+[beta: 0.05249] 
+<630> LL/token: -9.24699
+[beta: 0.05251] 
+<640> LL/token: -9.24699
+[beta: 0.05242] 
+<650> LL/token: -9.2465
+[beta: 0.05225] 
+<660> LL/token: -9.24656
+[beta: 0.05239] 
+<670> LL/token: -9.24643
+[beta: 0.05243] 
+<680> LL/token: -9.2447
+[beta: 0.05248] 
+<690> LL/token: -9.24387
+
+0	0.10783	jake wolf pack back time jacobs knew imprint wanted mom thought leahs mae alex kim sams wolves long words push 
+1	0.1451	ashley time mother father man years amber eda family long girl sister day good woman home back finally world left 
+2	0.37508	eyes back head face hand looked hands turned door voice asked smile hair room lips fingers pulled made felt side 
+3	0.29932	time good yeah school people make back phone girl dad work made day shit thing lot things friends pretty fuck 
+4	0.16756	eyes back school face looked class voice beau asked truck car time table forks jess thought day good edythe head 
+5	0.48263	back asked looked eyes time head hand nodded smiled knew felt room house started face turned told made love wanted 
+6	0.05591	aro caius marcus demetri felix mia valerie aros vampire ramona back alec room willow guard mate vampires looked coven brother 
+7	0.27996	eyes back lips body feel hand felt hands face mouth love fingers hair skin head time voice chest mine arms 
+8	0.12757	back eyes head asks face hand smile feel takes makes smiles time door room nods turns hands make feels bambi 
+9	0.70967	time human knew thought vampire life made felt mind family eyes wanted make back bellas things moment feel blood long 
+
+[beta: 0.05234] 
+<700> LL/token: -9.24359
+[beta: 0.0524] 
+<710> LL/token: -9.24373
+[beta: 0.05245] 
+<720> LL/token: -9.24298
+[beta: 0.05241] 
+<730> LL/token: -9.24182
+[beta: 0.05247] 
+<740> LL/token: -9.24119
+[beta: 0.05258] 
+<750> LL/token: -9.24251
+[beta: 0.05248] 
+<760> LL/token: -9.2413
+[beta: 0.05251] 
+<770> LL/token: -9.24097
+[beta: 0.05244] 
+<780> LL/token: -9.2411
+[beta: 0.0525] 
+<790> LL/token: -9.24118
+
+0	0.10206	jake wolf pack back time jacobs knew imprint mom thought wanted leahs mae alex kim sams long push words wolves 
+1	0.13764	ashley time mother father man years amber long eda family woman girl sister good day home back left night world 
+2	0.3824	eyes back head face hand looked hands turned door smile voice asked hair room made pulled side felt fingers lips 
+3	0.31184	time good school yeah back people girl make phone dad day friends made lot things thing work shit pretty car 
+4	0.14788	eyes back face looked school voice beau asked class car truck time thought table head good forks jess edythe day 
+5	0.46223	back asked looked eyes time head hand nodded smiled felt room knew face started house told turned wanted made love 
+6	0.05386	aro caius marcus demetri felix valerie mia aros ramona alec vampire back willow room guard mate vampires looked coven asked 
+7	0.25643	eyes back lips body feel hand felt hands face love mouth fingers hair skin head time voice chest mine neck 
+8	0.12059	back eyes head asks face hand smile feel takes smiles makes room door nods hands time turns feels make bambi 
+9	0.68379	time human knew thought vampire life felt made mind family wanted eyes make back moment bellas feel blood things vampires 
+
+[beta: 0.05245] 
+<800> LL/token: -9.24012
+[beta: 0.05251] 
+<810> LL/token: -9.24016
+[beta: 0.05238] 
+<820> LL/token: -9.24152
+[beta: 0.05236] 
+<830> LL/token: -9.24117
+[beta: 0.05232] 
+<840> LL/token: -9.24168
+[beta: 0.05245] 
+<850> LL/token: -9.24165
+[beta: 0.05252] 
+<860> LL/token: -9.24003
+[beta: 0.05252] 
+<870> LL/token: -9.24046
+[beta: 0.05256] 
+<880> LL/token: -9.24048
+[beta: 0.0525] 
+<890> LL/token: -9.23851
+
+0	0.10508	jake wolf back pack time knew jacobs imprint mom wanted thought leahs mae alex kim sams words long push wolves 
+1	0.13882	ashley mother time man father years eda amber long family sister girl home good woman day back night love world 
+2	0.37655	eyes back head face hand looked hands turned door smile voice asked hair room made pulled fingers side lips felt 
+3	0.31661	time good school yeah people back make phone girl day dad made friends lot work things thing car class thought 
+4	0.13115	eyes back looked face voice beau asked school class truck car time thought head table edythe good day walked forks 
+5	0.45341	back asked looked eyes head time hand smiled nodded felt knew room face house started turned told love made wanted 
+6	0.05324	aro caius marcus demetri felix mia valerie aros ramona vampire alec back willow room guard mate vampires looked brother coven 
+7	0.24757	eyes back lips body feel hand felt hands love mouth face fingers hair skin head time voice chest neck mine 
+8	0.12116	back eyes head asks face hand smile feel takes smiles time makes door room nods hands turns feels make bambi 
+9	0.67253	time human knew thought vampire life felt made mind family eyes wanted make back moment things feel blood bellas long 
+
+[beta: 0.05239] 
+<900> LL/token: -9.23937
+[beta: 0.0523] 
+<910> LL/token: -9.23873
+[beta: 0.05248] 
+<920> LL/token: -9.24012
+[beta: 0.05231] 
+<930> LL/token: -9.23905
+[beta: 0.05245] 
+<940> LL/token: -9.23847
+[beta: 0.05238] 
+<950> LL/token: -9.23844
+[beta: 0.05247] 
+<960> LL/token: -9.23848
+[beta: 0.05249] 
+<970> LL/token: -9.23784
+[beta: 0.05261] 
+<980> LL/token: -9.23843
+[beta: 0.05254] 
+<990> LL/token: -9.23762
+
+0	0.1039	jake back wolf pack time jacobs knew imprint mom thought wanted leahs mae alex kim long sams words push things 
+1	0.1388	ashley time mother man father years amber long eda back family home sister good day woman girl love night hair 
+2	0.37809	eyes back head face hand looked hands turned door smile voice asked hair room made felt pulled fingers lips side 
+3	0.32637	time good school yeah people back girl make dad phone day friends made lot work thing car things class pretty 
+4	0.12611	eyes back looked face beau asked voice school class car truck head thought table time good edythe day walked turned 
+5	0.45857	back asked looked eyes head hand time nodded smiled felt knew face room started house turned told love wanted door 
+6	0.05326	aro caius marcus demetri felix valerie mia aros ramona alec vampire room back willow guard mate vampires looked coven brother 
+7	0.23923	eyes back lips body feel hand felt hands face love mouth fingers hair skin time head voice chest mine neck 
+8	0.12421	back eyes head asks face hand smile feel takes smiles makes room nods door time hands turns make feels bambi 
+9	0.66723	time human knew thought vampire life eyes felt made mind family wanted make back moment things blood feel bellas thoughts 
+
+[beta: 0.05248] 
+<1000> LL/token: -9.23849
+[beta: 0.0525] 
+<1010> LL/token: -9.23862
+[beta: 0.05245] 
+<1020> LL/token: -9.23831
+[beta: 0.05249] 
+<1030> LL/token: -9.23851
+[beta: 0.0526] 
+<1040> LL/token: -9.23988
+[beta: 0.0526] 
+<1050> LL/token: -9.23997
+[beta: 0.05265] 
+<1060> LL/token: -9.23811
+[beta: 0.05257] 
+<1070> LL/token: -9.23868
+[beta: 0.05247] 
+<1080> LL/token: -9.23944
+[beta: 0.05243] 
+<1090> LL/token: -9.23932
+
+0	0.10638	jake back wolf pack time knew jacobs mom thought imprint wanted leahs mae alex kim long sams words things good 
+1	0.13333	ashley time mother father man years amber eda family long sister good woman home back girl day love night young 
+2	0.37596	eyes back head face hand looked hands turned door smile voice hair asked room made pulled side arms lips fingers 
+3	0.32704	time school good yeah back people make girl dad phone made day friends lot things thing work car class thought 
+4	0.12236	eyes back looked face asked beau voice school class car truck head time thought edythe table good walked turned day 
+5	0.45254	back asked looked eyes head hand time smiled nodded felt face knew room started house turned love wanted told door 
+6	0.05227	aro caius marcus demetri felix valerie mia aros ramona vampire alec back room guard vampires mate looked coven brother human 
+7	0.24115	eyes back lips body feel hand felt hands love face mouth fingers skin hair time head voice chest mine neck 
+8	0.12619	back eyes head asks face hand smile feel takes smiles makes door room nods hands time turns feels make bambi 
+9	0.65738	time human knew thought vampire life felt eyes mind made family wanted make back moment blood things bellas feel long 
+
+[beta: 0.05243] 
+<1100> LL/token: -9.23933
+[beta: 0.05252] 
+<1110> LL/token: -9.2402
+[beta: 0.05247] 
+<1120> LL/token: -9.24096
+[beta: 0.05241] 
+<1130> LL/token: -9.24109
+[beta: 0.05235] 
+<1140> LL/token: -9.24039
+[beta: 0.05243] 
+<1150> LL/token: -9.24088
+[beta: 0.05232] 
+<1160> LL/token: -9.24014
+[beta: 0.0523] 
+<1170> LL/token: -9.24054
+[beta: 0.05231] 
+<1180> LL/token: -9.2396
+[beta: 0.05227] 
+<1190> LL/token: -9.23759
+
+0	0.10398	jake wolf pack back time jacobs knew mom imprint thought wanted leahs mae alex kim words things sams long told 
+1	0.13396	ashley mother father willow time years man love sister amber eda anna family long day home girl back woman good 
+2	0.37516	eyes back head face hand looked hands turned door voice smile hair asked room felt pulled fingers side made lips 
+3	0.33886	time school good back yeah people make girl day dad made phone friends lot things class car thought thing home 
+4	0.11307	eyes back looked face asked beau voice school class car head truck time thought edythe table good walked turned day 
+5	0.43807	back asked looked eyes head hand time nodded felt smiled face knew room started turned house door told love wanted 
+6	0.05308	aro caius marcus demetri felix valerie mia aros vampire ramona alec back guard room vampires looked mate coven human basileus 
+7	0.24115	eyes back lips body feel hand felt hands love mouth face fingers skin hair voice head time chest mine neck 
+8	0.12091	back eyes head asks face hand smile feel takes smiles time makes door hands nods room turns feels make bambi 
+9	0.65652	time human knew thought life vampire eyes made felt family mind make wanted back moment blood things bellas long feel 
+
+[beta: 0.05228] 
+<1200> LL/token: -9.23711
+[beta: 0.05228] 
+<1210> LL/token: -9.23627
+[beta: 0.05222] 
+<1220> LL/token: -9.23493
+[beta: 0.05223] 
+<1230> LL/token: -9.23525
+[beta: 0.05208] 
+<1240> LL/token: -9.23534
+[beta: 0.05224] 
+<1250> LL/token: -9.23518
+[beta: 0.05221] 
+<1260> LL/token: -9.23585
+[beta: 0.05217] 
+<1270> LL/token: -9.23708
+[beta: 0.05214] 
+<1280> LL/token: -9.23697
+[beta: 0.05215] 
+<1290> LL/token: -9.23578
+
+0	0.10275	jake wolf back pack time knew jacobs imprint mom thought wanted leahs mae alex kim words told sams push long 
+1	0.1227	ashley mother love willow father sister time man years amber eda family anna back good day home long baby hair 
+2	0.37702	eyes back head face hand looked hands turned door voice smile hair room made felt asked fingers pulled lips side 
+3	0.34155	time school good back yeah girl people make day friends dad made phone car lot class thing things work home 
+4	0.11656	eyes back looked face beau asked voice school class car head truck time thought edythe table good walked turned day 
+5	0.44771	back asked looked eyes head hand time felt nodded smiled face knew room turned started house door wanted told made 
+6	0.05295	aro caius marcus demetri felix vampire valerie mia aros ramona alec back room guard mate vampires human looked coven brother 
+7	0.23574	eyes lips back body feel hand felt hands mouth love face fingers hair skin head time voice chest neck arms 
+8	0.12311	back eyes head asks face hand smile feel takes door makes smiles nods room hands time turns feels make bambi 
+9	0.66707	time human knew thought life vampire eyes made mind family felt wanted make back long things moment blood bellas feel 
+
+[beta: 0.05222] 
+<1300> LL/token: -9.23485
+[beta: 0.05216] 
+<1310> LL/token: -9.2346
+[beta: 0.05219] 
+<1320> LL/token: -9.23435
+[beta: 0.05246] 
+<1330> LL/token: -9.23459
+[beta: 0.05231] 
+<1340> LL/token: -9.23436
+[beta: 0.05237] 
+<1350> LL/token: -9.23338
+[beta: 0.05229] 
+<1360> LL/token: -9.23438
+[beta: 0.05221] 
+<1370> LL/token: -9.23438
+[beta: 0.05235] 
+<1380> LL/token: -9.23366
+[beta: 0.05233] 
+<1390> LL/token: -9.23384
+
+0	0.10347	jake pack back wolf time knew jacobs mom imprint thought wanted leahs mae alex kim sams dad words things told 
+1	0.12192	ashley mother love willow father baby sister family amber eda time anna man years asked back rose good daughter girl 
+2	0.36511	eyes back head face hand hands looked turned door voice smile hair made room felt fingers lips side asked pulled 
+3	0.34698	time school good back yeah girl people make day friends phone made dad lot class car home thing things thought 
+4	0.11194	eyes back looked face asked beau voice school class car truck head thought edythe time table good walked turned day 
+5	0.44704	back asked looked eyes head hand time felt nodded face smiled knew room turned started door house made wanted told 
+6	0.05396	aro caius marcus demetri felix valerie mia aros vampire ramona alec back guard room vampires mate looked thought coven human 
+7	0.23144	eyes lips back body hand feel hands felt mouth love face fingers hair skin time head voice chest mine neck 
+8	0.12396	back eyes head asks face hand smile feel takes time smiles makes door room nods hands turns make feels bambi 
+9	0.65791	time human knew life thought vampire made felt family eyes mind wanted back make blood moment things long bellas feel 
+
+[beta: 0.05236] 
+<1400> LL/token: -9.2332
+[beta: 0.0524] 
+<1410> LL/token: -9.23427
+[beta: 0.05232] 
+<1420> LL/token: -9.234
+[beta: 0.05228] 
+<1430> LL/token: -9.2337
+[beta: 0.05232] 
+<1440> LL/token: -9.23412
+[beta: 0.05223] 
+<1450> LL/token: -9.23398
+[beta: 0.05229] 
+<1460> LL/token: -9.23498
+[beta: 0.05226] 
+<1470> LL/token: -9.23472
+[beta: 0.05222] 
+<1480> LL/token: -9.23456
+[beta: 0.05224] 
+<1490> LL/token: -9.23423
+
+0	0.10476	jake wolf pack back time knew jacobs thought mom imprint wanted leahs mae alex kim things long dad sams told 
+1	0.11853	ashley love mother willow baby rose sister asked father family eda amber time anna back good years man hair home 
+2	0.35037	eyes back head face hand hands looked turned door voice smile hair room fingers lips pulled side felt made arm 
+3	0.3453	time school good yeah back people girl make day dad friends made lot phone class things car thing thought home 
+4	0.1171	eyes back face looked beau asked voice school class truck car head thought edythe table time good walked turned made 
+5	0.4606	back asked looked eyes head hand time felt nodded knew face smiled room turned door house started made wanted told 
+6	0.05369	aro caius marcus demetri felix vampire aros valerie mia ramona alec back guard room vampires mate human coven looked brother 
+7	0.2402	eyes lips body back feel hand hands felt love mouth face fingers skin hair head voice time chest neck arms 
+8	0.1236	back eyes head asks face hand smile feel takes makes door smiles hands room time nods turns feels make voice 
+9	0.6441	time human knew life thought vampire made felt family eyes mind make wanted back blood long things bellas moment vampires 
+
+[beta: 0.05227] 
+<1500> LL/token: -9.23411
+[beta: 0.05224] 
+<1510> LL/token: -9.23284
+[beta: 0.05214] 
+<1520> LL/token: -9.23207
+[beta: 0.05215] 
+<1530> LL/token: -9.23258
+[beta: 0.0523] 
+<1540> LL/token: -9.2328
+[beta: 0.05236] 
+<1550> LL/token: -9.23186
+[beta: 0.05227] 
+<1560> LL/token: -9.23186
+[beta: 0.05223] 
+<1570> LL/token: -9.23232
+[beta: 0.05228] 
+<1580> LL/token: -9.23092
+[beta: 0.05229] 
+<1590> LL/token: -9.23058
+
+0	0.10545	jake wolf back pack time knew jacobs mom thought imprint wanted leahs mae alex kim things dad sams long make 
+1	0.11101	ashley love willow baby mother rose sister family back eda amber father anna asked time home good room day daughter 
+2	0.34301	eyes back head face hand hands turned looked door voice smile hair room fingers lips side felt made open front 
+3	0.35629	time school good back yeah girl people make dad made day lot friends phone class car thing things pretty home 
+4	0.10644	eyes back face looked beau voice asked school truck class car head thought edythe time table good walked turned day 
+5	0.47361	back asked looked eyes head hand time felt face nodded smiled knew room turned door started house made wanted told 
+6	0.05275	aro caius marcus demetri felix vampire valerie mia aros alec ramona guard room vampires back mate human coven thought brother 
+7	0.2343	eyes back lips body hand feel hands felt love mouth fingers face hair skin time head voice chest arms neck 
+8	0.12228	back eyes head asks face hand feel smile takes makes smiles door nods room hands time turns make feels voice 
+9	0.64034	time human knew life thought vampire made family felt mind eyes wanted back make blood bellas long moment things feel 
+
+[beta: 0.05217] 
+<1600> LL/token: -9.23135
+[beta: 0.05229] 
+<1610> LL/token: -9.22867
+[beta: 0.05221] 
+<1620> LL/token: -9.23007
+[beta: 0.05233] 
+<1630> LL/token: -9.23098
+[beta: 0.05222] 
+<1640> LL/token: -9.23196
+[beta: 0.05229] 
+<1650> LL/token: -9.2326
+[beta: 0.05237] 
+<1660> LL/token: -9.2316
+[beta: 0.05241] 
+<1670> LL/token: -9.23013
+[beta: 0.05239] 
+<1680> LL/token: -9.23004
+[beta: 0.05241] 
+<1690> LL/token: -9.22916
+
+0	0.10157	jake back wolf pack time knew jacobs mom thought wanted imprint leahs mae things alex kim dad sams told make 
+1	0.1091	ashley love willow baby mother rose sister back eda asked amber family anna good father time dad home room day 
+2	0.33993	eyes back head face hand hands voice door looked turned smile hair fingers lips room arm side front pulled open 
+3	0.35899	time school good back people girl yeah make day dad made friends class lot phone thought thing car things pretty 
+4	0.10709	eyes back face looked beau voice asked school class truck car head edythe thought time table good turned day walked 
+5	0.48156	back asked looked eyes head hand time felt face nodded smiled knew turned room door made started house wanted told 
+6	0.05249	aro caius marcus demetri felix vampire valerie mia aros ramona alec guard vampires back room mate human coven thought brother 
+7	0.23607	eyes back lips body hand feel felt hands love mouth face fingers hair skin head time voice chest mine neck 
+8	0.12167	back eyes head asks face hand feel smile takes smiles makes time door room nods hands turns make feels voice 
+9	0.63142	time human knew thought life vampire made family felt mind eyes back wanted make blood long things moment bellas vampires 
+
+[beta: 0.05234] 
+<1700> LL/token: -9.23023
+[beta: 0.05217] 
+<1710> LL/token: -9.2308
+[beta: 0.05237] 
+<1720> LL/token: -9.2298
+[beta: 0.05241] 
+<1730> LL/token: -9.23082
+[beta: 0.05235] 
+<1740> LL/token: -9.23028
+[beta: 0.05228] 
+<1750> LL/token: -9.22913
+[beta: 0.05233] 
+<1760> LL/token: -9.2289
+[beta: 0.0524] 
+<1770> LL/token: -9.22871
+[beta: 0.05238] 
+<1780> LL/token: -9.22918
+[beta: 0.05234] 
+<1790> LL/token: -9.22852
+
+0	0.10444	jake pack wolf back time knew jacobs mom wanted thought imprint things mae leahs dad alex kim sams life long 
+1	0.10064	ashley love willow baby mother rose sister family asked eda back amber anna father good time dad room daughter home 
+2	0.3379	eyes back head face hand hands voice door turned looked smile hair fingers lips room side arm made front open 
+3	0.35799	time school good back yeah girl people make day dad made friends lot phone class car thing things thought home 
+4	0.10573	eyes back looked face beau voice asked school class truck car head edythe thought time table turned good walked day 
+5	0.49335	back asked looked eyes head hand time felt face nodded knew smiled turned room door made started house told wanted 
+6	0.05602	aro caius marcus demetri felix valerie vampire mia aros alec ramona room guard vampires back mate human coven thought basileus 
+7	0.23548	back eyes lips body feel hand hands felt love mouth face fingers hair skin time voice head chest arms neck 
+8	0.12483	back eyes head asks face hand feel smile takes makes smiles door nods time hands room turns make feels voice 
+9	0.63671	time human knew life thought vampire made family felt mind eyes back make wanted long blood things moment bellas feel 
+
+[beta: 0.05245] 
+<1800> LL/token: -9.22859
+[beta: 0.05243] 
+<1810> LL/token: -9.2292
+[beta: 0.05253] 
+<1820> LL/token: -9.22883
+[beta: 0.05241] 
+<1830> LL/token: -9.22881
+[beta: 0.05235] 
+<1840> LL/token: -9.228
+[beta: 0.05242] 
+<1850> LL/token: -9.22855
+[beta: 0.05241] 
+<1860> LL/token: -9.22888
+[beta: 0.05247] 
+<1870> LL/token: -9.22802
+[beta: 0.05235] 
+<1880> LL/token: -9.22782
+[beta: 0.05235] 
+<1890> LL/token: -9.2268
+
+0	0.10669	jake wolf back pack time knew jacobs mom wanted thought imprint leahs mae alex kim things dad told sams long 
+1	0.10217	ashley love baby willow mother asked back sister family rose eda amber anna good time dad father home room daughter 
+2	0.3358	eyes back head face hand hands turned voice door hair looked smile fingers lips side louisa made gaze front mouth 
+3	0.35641	time school good back people yeah girl make day dad made friends class lot phone things car thing thought mom 
+4	0.10276	eyes back face beau looked voice asked school class truck car head edythe thought time table good day walked turned 
+5	0.50545	back asked looked eyes head hand felt time face nodded knew smiled turned room door made house started wanted told 
+6	0.05136	aro caius marcus demetri felix vampire valerie aros mia alec ramona back room guard vampires mate coven human thought brother 
+7	0.23596	eyes back body lips feel hand felt hands love mouth face fingers hair skin head time voice chest arms neck 
+8	0.11944	back eyes head asks face hand feel smile takes smiles makes door nods room time hands turns make feels voice 
+9	0.62791	time human knew life thought vampire family felt made mind eyes make back wanted blood long bellas moment things thoughts 
+
+[beta: 0.05229] 
+<1900> LL/token: -9.22854
+[beta: 0.0524] 
+<1910> LL/token: -9.22969
+[beta: 0.05243] 
+<1920> LL/token: -9.22844
+[beta: 0.05234] 
+<1930> LL/token: -9.22815
+[beta: 0.05243] 
+<1940> LL/token: -9.22842
+[beta: 0.05246] 
+<1950> LL/token: -9.228
+[beta: 0.0524] 
+<1960> LL/token: -9.2283
+[beta: 0.0525] 
+<1970> LL/token: -9.22758
+[beta: 0.05241] 
+<1980> LL/token: -9.22757
+[beta: 0.05233] 
+<1990> LL/token: -9.22744
+
+0	0.10489	jake wolf back pack time knew jacobs mom thought imprint wanted things leahs dad mae alex kim make told sams 
+1	0.10069	ashley love baby willow mother back asked rose sister family eda amber anna room dad hair time good father daughter 
+2	0.32895	eyes back face head hand hands voice door turned hair smile fingers looked lips louisa gaze open side mouth skin 
+3	0.35512	time school good back people girl yeah make day dad friends lot phone made class car thought things thing home 
+4	0.10369	eyes back face beau looked voice asked school class truck car head edythe thought table time turned good walked hair 
+5	0.50504	back looked asked eyes head hand felt time face nodded smiled turned knew room door made house started wanted told 
+6	0.05338	aro caius marcus demetri felix vampire valerie mia aros alec ramona room guard back vampires human mate coven brother basileus 
+7	0.23852	eyes back lips body feel hand felt hands love mouth face fingers hair skin head time voice chest mine neck 
+8	0.1232	back eyes head asks face hand feel smile takes makes smiles door nods time room hands turns feels make bambi 
+9	0.62132	time human knew life thought vampire made family felt mind eyes back wanted make blood long moment bellas things thoughts 
+
+[beta: 0.05229] 
+<2000> LL/token: -9.22726
+
+Total time: 6 minutes 47 seconds
+
+--- End of Mallet Output ---
+
+
+Training successful.
+
+** Generating Output **
+
+Html Output files written in C:\Users\User\Desktop\output_html
+Csv Output files written in C:\Users\User\Desktop\output_csv
+Time (including output generation): 449.963
+
